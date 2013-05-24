@@ -22,11 +22,8 @@ sub next_victim {
 
 sub josephus {
   my ($num, $m) = @_;
-  my @survivors = ();
+  my @survivors = (0 .. $num -1);
   my @murders = ();
-  for (my $i=0;$i<$num;$i++) {
-    push @survivors, $i;
-  }
   my $next = &next_victim(@survivors);
   my $c = 0;
   while (@murders < $num) {
